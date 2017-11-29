@@ -1,0 +1,19 @@
+body {
+    padding: 50px;
+}
+
+#novice {
+    margin-top: 25px;
+}
+
+.toggle {
+    display: none;
+}
+
+#novaNovica {
+    margin-top: 25px;
+}
+
+form {
+    width: 50%;
+}
