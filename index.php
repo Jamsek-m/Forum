@@ -12,7 +12,7 @@ define("CSS_URL", rtrim($_SERVER["SCRIPT_NAME"], "index.php") . "static/css/");
 
 $path = isset($_SERVER["PATH_INFO"]) ? trim($_SERVER["PATH_INFO"], "/") : "";
 
-// definiraj ROUTERS:
+// definicija usmerjevalnikov:
 $urls = [
     "" => function() {
         if(jeMetoda("POST")){
@@ -22,8 +22,7 @@ $urls = [
         }
     },
     "odjava" => function(){
-        session_destroy();
-        ViewUtil::redirect(BASE_URL . "prijava");
+        LoginController::odjaviUporabnika();
     },
     "prijava" => function(){
         if(jeMetoda("POST")){
@@ -34,15 +33,14 @@ $urls = [
     }
 ];
 
-// izvedi ROUTERS:
+// izvedba usmerjevalnikov:
 try {
     if(!isset($_SESSION["uporabnik"]) && $path != "prijava"){
-        ViewUtil::redirect(BASE_URL . "prijava");
+        LoginController::preusmeriNeprijavljenegaUporabnika();
     } elseif (isset($urls[$path])) {
         $urls[$path]();
     } else {
         throw new InvalidArgumentException();
-        //echo "Ni krmilnika za $path";
     }
 } catch (InvalidArgumentException $e){
     echo "ERROR: 404";

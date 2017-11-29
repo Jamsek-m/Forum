@@ -34,6 +34,15 @@ class LoginController {
         //$vnos["geslo"] = password_hash($vnos["geslo"], PASSWORD_DEFAULT);
     }
 
+    public static function odjaviUporabnika(){
+        session_destroy();
+        ViewUtil::redirect(BASE_URL . "prijava");
+    }
+
+    public static function preusmeriNeprijavljenegaUporabnika(){
+        ViewUtil::redirect(BASE_URL . "prijava");
+    }
+
     private static function getPravila(){
         return [
             "upb_ime" => FILTER_SANITIZE_SPECIAL_CHARS,

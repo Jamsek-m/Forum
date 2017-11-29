@@ -1,0 +1,13 @@
+forma {
+    width : 20%;
+}
+
+.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toggle{
+    display:none
+}
