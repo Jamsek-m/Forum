@@ -12,15 +12,17 @@
 
 <script>
     $(document).ready(function () {
-        
+
     });
 </script>
 
 <body>
 
     <form action="<?= BASE_URL ?>prijava" method="post">
-        Upime: <input type="text" name="upb_ime" /> <br/>
-        Geslo: <input type="password" name="geslo" /> <br/>
+        <label for="upb_ime">Upime:</label>
+        <input type="text" name="upb_ime" id="upb_ime"/> <br/>
+        <label for="geslo">Geslo:</label>
+        <input type="password" name="geslo" id="geslo" /> <br/>
         <?php if(isset($_GET["error"])): ?>
             <span class="alert alert-danger">Napačno uporabniško ime in/ali geslo!</span>
         <?php endif ?>

@@ -34,7 +34,7 @@
                 <div>
                     <h3><?= $novica["naslov"] ?></h3>
                     <p><?= $novica["tekst"] ?></p>
-                    <p><?= $novica["datum"] ?>, posted by: <?= $novica["avtor_id"] ?></p>
+                    <p><?= $novica["datum"] ?>, posted by: <?= $novica["ime"] ?></p>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-group">
                     <label for="tekst">Novica:</label>
-                    <textarea class="form-control" name="tekst" id="tekst" required rows="5" required></textarea>
+                    <textarea class="form-control" name="tekst" id="tekst" required rows="5"></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Shrani</button>
             </form>

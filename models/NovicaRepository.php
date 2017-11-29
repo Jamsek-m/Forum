@@ -20,7 +20,7 @@ class NovicaRepository extends Repository {
     }
 
     public static function getAll() {
-        return parent::query("SELECT * FROM novica");
+        return parent::query("SELECT n.id, naslov, tekst, datum, ime FROM novica n INNER JOIN uporabnik u ON n.id=u.id;");
     }
 
     public static function insert(array $params) {
